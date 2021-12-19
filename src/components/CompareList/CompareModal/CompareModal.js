@@ -1,6 +1,6 @@
 import './CompareModal.scss';
 import { useContext } from 'react';
-import { ReferenceDataContext } from '../../state/ReferenceDataContext';
+import { ReferenceDataContext } from '../../../state/ReferenceDataContext';
 import { Modal, Box, Rating, Button } from '@mui/material';
 import { Close } from '@mui/icons-material';
 

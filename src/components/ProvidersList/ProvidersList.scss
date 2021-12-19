@@ -14,35 +14,3 @@
     padding: .5rem 0;
   }
 }
-
-.compare-list-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  &__provider {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid #fff;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    width: 13.75rem;
-    margin-right: 1rem;
-
-    .MuiButton-root {
-      border-radius: 100%;
-      min-width: 2.5rem;
-    }
-  }
-
-  &__image {
-    max-width: 3rem;
-  }
-
-  &__info-box {
-    display: flex;
-    flex-direction: column;
-  }
-}

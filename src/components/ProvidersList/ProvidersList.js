@@ -1,30 +1,11 @@
 import './ProvidersList.scss';
 import { useContext } from 'react';
 import { ReferenceDataContext } from '../../state/ReferenceDataContext';
-import { Button } from '@mui/material';
-import { Close } from '@mui/icons-material';
-import { CompareModal } from '../CompareModal/CompareModal';
 import { ProviderItem } from './ProviderItem/ProviderItem';
+import { CompareList } from '../CompareList/CompareList';
 
 export const ProvidersList = () => {
-  const {
-    providerList,
-    compareProviderList,
-    setCompareProviderList,
-    setCompareModalOpen,
-  } = useContext(ReferenceDataContext);
-
-  const toggle = (provider) => {
-    if (compareProviderList.some((x) => x?.deal_id === provider?.deal_id)) {
-      setCompareProviderList([
-        ...compareProviderList.filter((p) => p.deal_id !== provider.deal_id),
-      ]);
-    } else {
-      if (compareProviderList.length && compareProviderList.length === 2)
-        return;
-      setCompareProviderList([...compareProviderList, provider]);
-    }
-  };
+  const { providerList } = useContext(ReferenceDataContext);
 
   return (
     <div className="App">
@@ -33,32 +14,7 @@ export const ProvidersList = () => {
           return <ProviderItem key={provider.deal_id} item={provider} />;
         })}
       </div>
-      {compareProviderList.length ? (
-        <div className="compare-list-wrapper">
-          {compareProviderList.map((provider, index) => {
-            return (
-              <div key={index} className="compare-list-wrapper__provider">
-                <img
-                  className="compare-list-wrapper__image"
-                  src={provider.provider_logo_image_url}
-                  alt={provider.provider_name}
-                />
-                <div className="compare-list-wrapper__info-box">
-                  <span>{provider.provider_name}</span>
-                  <span>{provider.deal_name}</span>
-                </div>
-                <Button onClick={() => toggle(provider)}>
-                  <Close />
-                </Button>
-              </div>
-            );
-          })}
-          <Button variant="contained" onClick={() => setCompareModalOpen(true)}>
-            Compare deals ({compareProviderList.length} of 2)
-          </Button>
-        </div>
-      ) : null}
-      <CompareModal />
+      <CompareList />
     </div>
   );
 };
