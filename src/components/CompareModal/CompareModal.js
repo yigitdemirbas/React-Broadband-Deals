@@ -1,14 +1,12 @@
 import './CompareModal.scss';
 import { useContext } from 'react';
 import { ReferenceDataContext } from '../../state/ReferenceDataContext';
-import { Modal, Box, Typography, Rating, Button } from '@mui/material';
+import { Modal, Box, Rating, Button } from '@mui/material';
 import { Close } from '@mui/icons-material';
 
 export const CompareModal = () => {
   const { compareProviderList, isCompareModalOpen, setCompareModalOpen } =
     useContext(ReferenceDataContext);
-
-  console.log(compareProviderList);
 
   const style = {
     position: 'absolute',

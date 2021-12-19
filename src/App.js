@@ -5,7 +5,7 @@ import { ProvidersList } from './components/ProvidersList/ProvidersList';
 import { ReferenceDataContext } from './state/ReferenceDataContext';
 
 const App = () => {
-  const { setLoading, providerList, setProviderList, setError } = useContext(ReferenceDataContext);
+  const { setLoading, setProviderList, setError } = useContext(ReferenceDataContext);
 
   useEffect(() => {
     getProviderList();
@@ -16,7 +16,6 @@ const App = () => {
     await axios('https://6177b8b59c328300175f5adc.mockapi.io/api/test/deals')
       .then((resp) => {
         setProviderList(resp?.data?.deals);
-        console.log('providerList', providerList);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
