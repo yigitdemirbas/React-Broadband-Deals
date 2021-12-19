@@ -31,24 +31,24 @@ export const ProviderItem = (props) => {
       </div>
       <div className="item__info-box">
         <span>{provider.provider_name}</span>
-        <span>{provider.deal_name}</span>
+        <span className="small">{provider.deal_name}</span>
         <Rating name="read-only" value={(provider.provider_rating * 5)} precision={0.1} readOnly />
       </div>
-      <div>
+      <div className="item__price">
           <span>£{provider.monthly_price}</span>
-          <span>Monthly Cost</span>
+          <span className="small">Monthly Cost</span>
       </div>
       <div>
-          <span>{provider.internet_speed}</span>
-          <span>{provider.broadband_type} Speed</span>
+          <span>{provider.internet_speed} Mbps</span>
+          <span className="small">{provider.broadband_type} Speed</span>
       </div>
       <div>
           <span>£{provider.set_up_cost}</span>
-          <span>Setup Cost</span>
+          <span className="small">Setup Cost</span>
       </div>
       <div>
           <span>{provider.contract_info}</span>
-          <span>Contract</span>
+          <span className="small">Contract</span>
       </div>
       <div>
         <Button variant="outlined" onClick={() => toggle(provider)}>

@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 1rem;
 }
 
 .compare-wrapper {
@@ -10,6 +13,7 @@
 
   .compare-table {
     width: 100%;
+    border-collapse: collapse;
 
     tr:nth-child(even) {background: #e3e3e3}
     tr:nth-child(odd) {background: #fff}
@@ -18,6 +22,10 @@
       td:not(:first-child) {
         text-align: center;
       }
+    }
+
+    td:not(:first-child):not(:last-child) {
+      border-right: 1px solid #c9c7c7;
     }
   }
 

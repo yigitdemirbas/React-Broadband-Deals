@@ -45,7 +45,7 @@ export const CompareModal = () => {
                         />
                         <div className="provider__info-box">
                           <span>{provider.provider_name}</span>
-                          <span>{provider.deal_name}</span>
+                          <span className="small">{provider.deal_name}</span>
                         </div>
                       </div>
                     </td>

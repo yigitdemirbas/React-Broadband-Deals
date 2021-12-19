@@ -24,18 +24,18 @@ export const CompareList = () => {
   return (
     <div>
       {compareProviderList.length ? (
-        <div className="compare-list-wrapper">
+        <div className="compare-list">
           {compareProviderList.map((provider, index) => {
             return (
-              <div key={index} className="compare-list-wrapper__provider">
+              <div key={index} className="compare-list__provider">
                 <img
-                  className="compare-list-wrapper__image"
+                  className="compare-list__image"
                   src={provider.provider_logo_image_url}
                   alt={provider.provider_name}
                 />
-                <div className="compare-list-wrapper__info-box">
+                <div className="compare-list__info-box">
                   <span>{provider.provider_name}</span>
-                  <span>{provider.deal_name}</span>
+                  <span className="small">{provider.deal_name}</span>
                 </div>
                 <Button onClick={() => toggle(provider)}>
                   <Close />

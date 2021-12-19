@@ -1,7 +1,8 @@
-.compare-list-wrapper {
+.compare-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 
   &__provider {
     display: flex;
@@ -11,7 +12,7 @@
     border: 1px solid #fff;
     border-radius: 1rem;
     padding: 0.5rem;
-    width: 13.75rem;
+    width: 14rem;
     margin-right: 1rem;
 
     .MuiButton-root {
@@ -27,5 +28,12 @@
   &__info-box {
     display: flex;
     flex-direction: column;
+    font-size: .75rem;
+    font-weight: 500;
+  }
+
+  .MuiButton-root {
+    font-weight: 600;
+    border-radius: .75rem;
   }
 }
