@@ -1,0 +1,51 @@
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.compare-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .compare-table {
+    width: 100%;
+
+    tr:nth-child(even) {background: #e3e3e3}
+    tr:nth-child(odd) {background: #fff}
+
+    tr:not(:first-child) {
+      td:not(:first-child) {
+        text-align: center;
+      }
+    }
+  }
+
+  .provider {
+    padding: 1rem;
+
+    &:not(:last-child) {
+      border-right: 1px solid #e3e3e3;
+    }
+
+    &__head {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__image {
+      max-width: 3rem;
+      margin-right: 1rem;
+    }
+
+    &__info-box {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.MuiBox-root {
+  border-radius: 1rem;
+}

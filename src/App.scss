@@ -1,0 +1,65 @@
+.app {
+  padding: 2rem;
+}
+
+$btn-primary-color: #3f51b5;
+$btn-secondary-color: #fff;
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: background 0.8s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-blue {
+  background-color: $btn-primary-color;
+  color: $btn-secondary-color;
+  border: 1px solid $btn-secondary-color;
+
+  &:hover {
+    background: lighten($btn-primary-color, 10%)
+      radial-gradient(
+        circle,
+        transparent 1%,
+        lighten($btn-primary-color, 10%) 1%
+      )
+      center/15000%;
+  }
+
+  &:active {
+    background-color: lighten($btn-primary-color, 20%);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
+.btn-outline-blue {
+  background-color: $btn-secondary-color;
+  color: $btn-primary-color;
+  border: 1px solid $btn-primary-color;
+
+  &:hover {
+    background: darken($btn-secondary-color, 10%)
+      radial-gradient(
+        circle,
+        transparent 1%,
+        darken($btn-secondary-color, 10%) 1%
+      )
+      center/15000%;
+  }
+
+  &:active {
+    background-color: darken($btn-secondary-color, 20%);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
+.MuiButton-root {
+  text-transform: initial !important;
+}
