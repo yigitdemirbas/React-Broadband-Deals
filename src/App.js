@@ -1,30 +1,14 @@
 import './App.scss';
-import { useEffect, useContext } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
 import { ProvidersList } from './components/ProvidersList/ProvidersList';
-import { ReferenceDataContext } from './state/ReferenceDataContext';
+import API from './API/api';
 
 const App = () => {
-  const { setLoading, setProviderList, setError } = useContext(ReferenceDataContext);
+  const { getProviderList } = API();
 
   useEffect(() => {
-    getProviderList();
+    getProviderList('api/test/deals');
   }, []);
-
-  const getProviderList = async () => {
-    setLoading(true);
-    await axios('https://6177b8b59c328300175f5adc.mockapi.io/api/test/deals')
-      .then((resp) => {
-        setProviderList(resp?.data?.deals);
-      })
-      .catch((error) => {
-        console.error('Error fetching data: ', error);
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
 
   return (
     <div className="app">
